@@ -1,3 +1,37 @@
 # .gitignore ファイル
 
 .env
+
+# Pythonの一時ファイルやログファイルを無視
+*.py[cod]
+*.log
+*.pid
+*.pyo
+*.pyd
+__pycache__/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Mac OSの一時ファイル
+.DS_Store
+
+# テスト/ビルドの出力を無視
+dist/
+build/
+*.egg-info/
+
+# Virtualenv環境
+env/
+venv/
+ENV/
+
+# Spyderプロジェクト設定
+.spyderproject
+.spyproject
+
+# PyCharmプロジェクト設定
+.idea/
+
+# VSCodeプロジェクト設定
+.vscode
