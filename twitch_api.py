@@ -1,8 +1,6 @@
 import os
-
 from dotenv import load_dotenv
 import requests
-
 
 load_dotenv()
 
@@ -19,6 +17,16 @@ def get_access_token():
     }
     response = requests.post(url, params=payload)
     return response.json()['access_token']
+
+# ユーザーIDを取得
+def get_user_id(username, access_token):
+    url = f'https://api.twitch.tv/helix/users?login={username}'
+    headers = {
+        'Client-ID': CLIENT_ID,
+        'Authorization': f'Bearer {access_token}'
+    }
+    response = requests.get(url, headers=headers)
+    return response.json()['data'][0]['id']
 
 # ビデオ情報を取得
 def get_videos(user_id, access_token):
